@@ -6,6 +6,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto-condensed": "^4.5.9",
+    "@fontsource/roboto-flex": "^4.5.2",
     "@mui/material": "^5.11.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
