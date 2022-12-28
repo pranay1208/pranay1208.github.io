@@ -1,12 +1,13 @@
 import { Box, Button, Toolbar, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
+import routes from "../routes";
 
 export default function TopBar({ backgroundColor }) {
   const navBarComponents = [
-    { name: "About", href: "/about" },
-    { name: "Experience", href: "/work-experience" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/contact" },
+    { name: "About", href: routes.About },
+    { name: "Experience", href: routes.Experience },
+    { name: "Projects", href: routes.Projects },
+    { name: "Contact", href: routes.Contact },
   ];
 
   return (
@@ -21,7 +22,7 @@ export default function TopBar({ backgroundColor }) {
               },
             }}
             variant='outlined'
-            href='/'
+            href={routes.Home}
           >
             <Typography
               variant='h6'
