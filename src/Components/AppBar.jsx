@@ -1,15 +1,17 @@
-import { Box, Button, Toolbar, Typography } from "@mui/material";
+import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
+import useResponsive from "../hooks/useResponsive";
+import MenuIcon from "@mui/icons-material/Menu";
 import routes from "../routes";
 
-export default function TopBar({ backgroundColor }) {
-  const navBarComponents = [
-    { name: "About", href: routes.About },
-    { name: "Experience", href: routes.Experience },
-    { name: "Projects", href: routes.Projects },
-    { name: "Contact", href: routes.Contact },
-  ];
+const navBarComponents = [
+  { name: "About", href: routes.About },
+  { name: "Experience", href: routes.Experience },
+  { name: "Projects", href: routes.Projects },
+  { name: "Contact", href: routes.Contact },
+];
 
+function TopBarDesktop({ backgroundColor }) {
   return (
     <AppBar sx={{ backgroundColor: backgroundColor }}>
       <Toolbar>
@@ -59,3 +61,33 @@ export default function TopBar({ backgroundColor }) {
     </AppBar>
   );
 }
+
+function TopBarMobile({ backgroundColor }) {
+  return (
+    <AppBar sx={{ backgroundColor }}>
+      <Toolbar>
+        <IconButton
+          size='large'
+          edge='start'
+          color='inherit'
+          aria-label='menu'
+          sx={{ mr: 2 }}
+        >
+          <MenuIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  );
+}
+
+const AppBarResponsive = (props) => {
+  const { isDesktop } = useResponsive();
+
+  if (isDesktop) {
+    return <TopBarDesktop {...props} />;
+  }
+
+  return <TopBarMobile {...props} />;
+};
+
+export default AppBarResponsive;
