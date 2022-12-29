@@ -60,6 +60,7 @@ const LandingPage = () => {
             </Box>
           </Grid>
           <Grid
+            item
             lg={4}
             sx={{
               display: { lg: "flex", xs: "none" },

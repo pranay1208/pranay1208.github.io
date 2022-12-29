@@ -39,6 +39,7 @@ function TopBarDesktop({ backgroundColor }) {
         {navBarComponents.map((i) => {
           return (
             <Button
+              key={i.name}
               color='inherit'
               sx={{
                 textTransform: "none",
@@ -66,14 +67,31 @@ function TopBarMobile({ backgroundColor }) {
   return (
     <AppBar sx={{ backgroundColor }}>
       <Toolbar>
+        <Box sx={{ flexGrow: 1 }}>
+          <IconButton
+            size='large'
+            edge='start'
+            color='inherit'
+            aria-label='menu'
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Box>
         <IconButton
-          size='large'
-          edge='start'
-          color='inherit'
-          aria-label='menu'
-          sx={{ mr: 2 }}
+          sx={{
+            backgroundColor: "#fff",
+            "&:hover": { backgroundColor: "#FFF" },
+          }}
         >
-          <MenuIcon />
+          <Typography
+            color={backgroundColor}
+            fontFamily='RobotoCondensedBold'
+            variant='h6'
+            component='div'
+          >
+            PA
+          </Typography>
         </IconButton>
       </Toolbar>
     </AppBar>

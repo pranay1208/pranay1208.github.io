@@ -1,16 +1,15 @@
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/styles";
+import { useMediaQuery } from "react-responsive";
 
 export default function useResponsive() {
-  const theme = useTheme();
-  console.log(theme);
-  const isDesktop = useMediaQuery(theme.breakpoints.up("lg"));
-  const isTabletOrDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  const isMobile = useMediaQuery(theme.breakpoints.only("xs"));
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 990px)",
+  });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 990px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return {
-    isDesktop,
-    isTabletOrDesktop,
-    isMobile,
+    isDesktop: isDesktopOrLaptop,
+    isTablet: isTabletOrMobile && !isMobile,
+    isMobile: isMobile,
   };
 }
