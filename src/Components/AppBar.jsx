@@ -1,8 +1,21 @@
-import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import useResponsive from "../hooks/useResponsive";
 import MenuIcon from "@mui/icons-material/Menu";
 import routes from "../routes";
+import { useState } from "react";
 
 const navBarComponents = [
   { name: "About", href: routes.About },
@@ -64,6 +77,8 @@ function TopBarDesktop({ backgroundColor }) {
 }
 
 function TopBarMobile({ backgroundColor }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <AppBar sx={{ backgroundColor }}>
       <Toolbar>
@@ -74,6 +89,7 @@ function TopBarMobile({ backgroundColor }) {
             color='inherit'
             aria-label='menu'
             sx={{ mr: 2 }}
+            onClick={() => setOpen(true)}
           >
             <MenuIcon />
           </IconButton>
@@ -94,6 +110,62 @@ function TopBarMobile({ backgroundColor }) {
           </Typography>
         </IconButton>
       </Toolbar>
+      <Drawer open={open} onClose={() => setOpen(false)} anchor='left'>
+        <Box
+          role='presentation'
+          sx={{ maxWidth: "500px", width: "10vh", minWidth: "250px" }}
+        >
+          <List sx={{ paddingTop: 0 }}>
+            <ListItem
+              key='home'
+              sx={{
+                backgroundColor: backgroundColor,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Button
+                fullWidth
+                sx={{
+                  backgroundColor: "#FEFEFE",
+                  "&.MuiButtonBase-root:hover": {
+                    bgcolor: "#FEFEFE",
+                  },
+                }}
+                variant='outlined'
+                href={routes.Home}
+              >
+                <Typography
+                  variant='h6'
+                  component='div'
+                  color={backgroundColor}
+                  fontFamily='RobotoCondensedBold'
+                >
+                  Portfolio
+                </Typography>
+              </Button>
+            </ListItem>
+            <Divider />
+            {navBarComponents.map((i) => {
+              return (
+                <ListItem key={i.name}>
+                  <ListItemButton href={i.href}>
+                    <ListItemText
+                      primary={i.name}
+                      primaryTypographyProps={{
+                        fontFamily: "RobotoCondensed",
+                        variant: "h6",
+                        component: "div",
+                      }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              );
+            })}
+            <Divider />
+          </List>
+        </Box>
+      </Drawer>
     </AppBar>
   );
 }
