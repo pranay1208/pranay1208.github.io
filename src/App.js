@@ -1,25 +1,22 @@
 // import logo from "./logo.svg";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import routes from "./routes";
 import LandingPage from "./Pages/LandingPage";
 
+const router = createBrowserRouter([
+  {
+    path: routes.Home,
+    element: <LandingPage />,
+  },
+  {
+    path: routes.Contact,
+    element: <div>ContactMe</div>,
+  },
+]);
+
 function App() {
-  return (
-    <LandingPage />
-    // <div className='App'>
-    //   <header className='App-header'>
-    //     <img src={logo} className='App-logo' alt='logo' />
-    //     <p>Pranay Agarwal - Portfolio</p>
-    //     <a
-    //       className='App-link'
-    //       href='https://pranay.webflow.io'
-    //       target='_blank'
-    //       rel='noopener noreferrer'
-    //     >
-    //       Current Portfolio
-    //     </a>
-    //   </header>
-    // </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

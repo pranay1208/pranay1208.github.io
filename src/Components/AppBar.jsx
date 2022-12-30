@@ -16,6 +16,7 @@ import useResponsive from "../hooks/useResponsive";
 import MenuIcon from "@mui/icons-material/Menu";
 import routes from "../routes";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const navBarComponents = [
   { name: "About", href: routes.About },
@@ -29,46 +30,50 @@ function TopBarDesktop({ backgroundColor }) {
     <AppBar sx={{ backgroundColor: backgroundColor }}>
       <Toolbar>
         <Box sx={{ flexGrow: 1 }}>
-          <Button
-            sx={{
-              backgroundColor: "#FEFEFE",
-              "&.MuiButtonBase-root:hover": {
-                bgcolor: "#FEFEFE",
-              },
-            }}
-            variant='outlined'
-            href={routes.Home}
-          >
-            <Typography
-              variant='h6'
-              component='div'
-              color={backgroundColor}
-              fontFamily='RobotoCondensedBold'
-            >
-              Portfolio
-            </Typography>
-          </Button>
-        </Box>
-        {navBarComponents.map((i) => {
-          return (
+          <Link to={routes.Home} style={{ textDecoration: "none" }}>
             <Button
-              key={i.name}
-              color='inherit'
               sx={{
-                textTransform: "none",
-                paddingX: 3,
+                backgroundColor: "#FEFEFE",
+                "&.MuiButtonBase-root:hover": {
+                  bgcolor: "#FEFEFE",
+                },
               }}
-              href={i.href}
+              variant='outlined'
             >
               <Typography
                 variant='h6'
                 component='div'
-                fontFamily='RobotoFlex'
-                fontWeight='bold'
+                color={backgroundColor}
+                fontFamily='RobotoCondensedBold'
               >
-                {i.name}
+                Portfolio
               </Typography>
             </Button>
+          </Link>
+        </Box>
+        {navBarComponents.map((i) => {
+          return (
+            <Link to={i.href} style={{ textDecoration: "none" }}>
+              <Button
+                key={i.name}
+                color='inherit'
+                sx={{
+                  textTransform: "none",
+                  paddingX: 3,
+                }}
+                href={i.href}
+              >
+                <Typography
+                  variant='h6'
+                  component='div'
+                  fontFamily='RobotoFlex'
+                  fontWeight='bold'
+                  color='#fefefe'
+                >
+                  {i.name}
+                </Typography>
+              </Button>
+            </Link>
           );
         })}
       </Toolbar>
