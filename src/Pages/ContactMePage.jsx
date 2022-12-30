@@ -20,7 +20,7 @@ const ContactMePage = () => {
   return (
     <>
       <TopBar backgroundColor={pageColor} />
-      <Box paddingX={isMobile ? 3 : 15} paddingTop={15}>
+      <Box paddingX={isMobile ? 3 : 15} paddingTop={15} paddingBottom={5}>
         <Grid
           container
           display='flex'

@@ -20,7 +20,7 @@ const LandingPage = () => {
   return (
     <>
       <TopBar backgroundColor={pageColor} />
-      <Box paddingX={isMobile ? 3 : 15} paddingTop={15}>
+      <Box paddingX={isMobile ? 3 : 15} paddingTop={15} paddingBottom={5}>
         <Grid container spacing={5}>
           <Grid container item lg={8} xs>
             <Box>
