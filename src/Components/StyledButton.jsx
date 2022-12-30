@@ -1,6 +1,11 @@
-import { Button, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
-export default function StyledButton({ buttonColor, buttonText, onClick }) {
+export default function StyledButton({
+  buttonColor,
+  onClick,
+  children,
+  style,
+}) {
   return (
     <Button
       variant='outlined'
@@ -12,13 +17,12 @@ export default function StyledButton({ buttonColor, buttonText, onClick }) {
         borderColor: buttonColor,
         borderWidth: 2,
         textTransform: "none",
+        ...style,
       }}
       size='large'
       onClick={onClick}
     >
-      <Typography color={buttonColor} fontWeight='bold'>
-        {buttonText}
-      </Typography>
+      {children}
     </Button>
   );
 }

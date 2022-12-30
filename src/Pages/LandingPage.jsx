@@ -20,7 +20,7 @@ const LandingPage = () => {
   return (
     <>
       <TopBar backgroundColor={pageColor} />
-      <Box paddingX={isMobile ? 3 : 15} paddingY={15}>
+      <Box paddingX={isMobile ? 3 : 15} paddingTop={15}>
         <Grid container spacing={5}>
           <Grid container item lg={8} xs>
             <Box>
@@ -50,14 +50,24 @@ const LandingPage = () => {
                 paddingTop={1}
                 maxWidth='80%'
               >
-                I am a software engineer based out of Hong Kong. I make projects
-                full stack and love building and designing user-facing products.
+                I am a software engineer based out of{" "}
+                <span
+                  style={{
+                    fontFamily: "RobotoCondensedBold",
+                    color: pageColor,
+                  }}
+                >
+                  Hong Kong
+                </span>
+                . I make projects full stack and love building and designing
+                user-facing products.
               </Typography>
               <Link to={routes.About} style={{ textDecoration: "none" }}>
-                <StyledButton
-                  buttonColor={pageColor}
-                  buttonText='Learn more about me'
-                />
+                <StyledButton buttonColor={pageColor}>
+                  <Typography color={pageColor} fontWeight='bold'>
+                    Learn more about me
+                  </Typography>
+                </StyledButton>
               </Link>
             </Box>
           </Grid>

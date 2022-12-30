@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import routes from "./routes";
 import LandingPage from "./Pages/LandingPage";
+import ContactMePage from "./Pages/ContactMePage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: routes.Contact,
-    element: <div>ContactMe</div>,
+    element: <ContactMePage />,
   },
 ]);
 
