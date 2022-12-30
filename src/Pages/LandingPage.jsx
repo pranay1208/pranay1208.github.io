@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import TopBar from "../Components/AppBar";
 import {
   EmailSocialIcon,
@@ -52,11 +53,12 @@ const LandingPage = () => {
                 I am a software engineer based out of Hong Kong. I make projects
                 full stack and love building and designing user-facing products.
               </Typography>
-              <StyledButton
-                buttonColor={pageColor}
-                buttonText='Learn more about me'
-                href={routes.About}
-              />
+              <Link to={routes.About} style={{ textDecoration: "none" }}>
+                <StyledButton
+                  buttonColor={pageColor}
+                  buttonText='Learn more about me'
+                />
+              </Link>
             </Box>
           </Grid>
           <Grid

@@ -61,7 +61,6 @@ function TopBarDesktop({ backgroundColor }) {
                   textTransform: "none",
                   paddingX: 3,
                 }}
-                href={i.href}
               >
                 <Typography
                   variant='h6'
@@ -129,41 +128,47 @@ function TopBarMobile({ backgroundColor }) {
                 justifyContent: "center",
               }}
             >
-              <Button
-                fullWidth
-                sx={{
-                  backgroundColor: "#FEFEFE",
-                  "&.MuiButtonBase-root:hover": {
-                    bgcolor: "#FEFEFE",
-                  },
-                }}
-                variant='outlined'
-                href={routes.Home}
-              >
-                <Typography
-                  variant='h6'
-                  component='div'
-                  color={backgroundColor}
-                  fontFamily='RobotoCondensedBold'
+              <Link to={routes.Home} style={{ textDecoration: "none" }}>
+                <Button
+                  fullWidth
+                  sx={{
+                    backgroundColor: "#FEFEFE",
+                    "&.MuiButtonBase-root:hover": {
+                      bgcolor: "#FEFEFE",
+                    },
+                  }}
+                  variant='outlined'
                 >
-                  Portfolio
-                </Typography>
-              </Button>
+                  <Typography
+                    variant='h6'
+                    component='div'
+                    color={backgroundColor}
+                    fontFamily='RobotoCondensedBold'
+                  >
+                    Portfolio
+                  </Typography>
+                </Button>
+              </Link>
             </ListItem>
             <Divider />
             {navBarComponents.map((i) => {
               return (
                 <ListItem key={i.name}>
-                  <ListItemButton href={i.href}>
-                    <ListItemText
-                      primary={i.name}
-                      primaryTypographyProps={{
-                        fontFamily: "RobotoCondensed",
-                        variant: "h6",
-                        component: "div",
-                      }}
-                    />
-                  </ListItemButton>
+                  <Link
+                    to={i.href}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <ListItemButton>
+                      <ListItemText
+                        primary={i.name}
+                        primaryTypographyProps={{
+                          fontFamily: "RobotoCondensed",
+                          variant: "h6",
+                          component: "div",
+                        }}
+                      />
+                    </ListItemButton>
+                  </Link>
                 </ListItem>
               );
             })}
