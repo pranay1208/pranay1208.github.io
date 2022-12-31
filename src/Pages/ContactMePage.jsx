@@ -59,6 +59,7 @@ const ContactMePage = () => {
                     borderColor: pageColorSecondary,
                   },
                 },
+                borderWidth: 1.5,
               }}
             />
             <TextField
@@ -84,6 +85,7 @@ const ContactMePage = () => {
                     borderColor: pageColorSecondary,
                   },
                 },
+                borderWidth: 1.5,
               }}
             />
             <Box display='flex' justifyContent='center' alignItems='center'>

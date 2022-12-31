@@ -37,6 +37,7 @@ function TopBarDesktop({ backgroundColor }) {
                 "&.MuiButtonBase-root:hover": {
                   bgcolor: "#FEFEFE",
                 },
+                borderColor: "#FEFEFE",
               }}
               variant='outlined'
             >

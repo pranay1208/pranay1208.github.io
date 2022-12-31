@@ -2,7 +2,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import routes from "./routes";
-import { ContactMePage, LandingPage, NotFoundPage } from "./Pages/";
+import {
+  AboutMePage,
+  ContactMePage,
+  LandingPage,
+  NotFoundPage,
+} from "./Pages/";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: routes.Contact,
     element: <ContactMePage />,
+  },
+  {
+    path: routes.About,
+    element: <AboutMePage />,
   },
   {
     path: "*",
