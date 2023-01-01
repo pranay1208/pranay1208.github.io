@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.about-link {
+  color: rgba(7, 113, 135, 0.7);
+  font-family: "RobotoCondensedBold";
+}
+
+.about-link:hover {
+  color: #077187;
+}

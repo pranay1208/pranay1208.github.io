@@ -59,11 +59,8 @@ const AboutMePage = () => {
                 <Hlspan>HealthTech</Hlspan>, <Hlspan>EduTech</Hlspan> and{" "}
                 <Hlspan>FinTech</Hlspan>. I am currently working in{" "}
                 <Hlspan>Open Banking and Payments </Hlspan> at{" "}
-                <a
-                  href='https://www.finverse.com/'
-                  style={{ textDecoration: `underline ${pageColorSecondary}` }}
-                >
-                  <Hlspan>Finverse Technologies</Hlspan>
+                <a className='about-link' href='https://www.finverse.com/'>
+                  Finverse Technologies
                 </a>
               </Typography>
               <Typography
