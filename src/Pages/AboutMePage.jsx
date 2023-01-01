@@ -25,7 +25,7 @@ const AboutMePage = () => {
       <Box paddingX={isMobile ? 3 : 15} paddingTop={15} paddingBottom={5}>
         <Grid container spacing={5}>
           <Grid container item lg={8} xs>
-            <Box maxWidth='80%'>
+            <Box maxWidth={isMobile ? "auto" : "80%"}>
               <Typography
                 variant='h2'
                 color={pageColor}
@@ -65,6 +65,25 @@ const AboutMePage = () => {
                 >
                   <Hlspan>Finverse Technologies</Hlspan>
                 </a>
+              </Typography>
+              <Typography
+                variant='h6'
+                component='p'
+                fontFamily='RobotoCondensed'
+                marginBottom={2}
+              >
+                Languages I have worked with:
+                <ul style={{ columns: 2 }}>
+                  <li>TypeScript</li>
+                  <li>Golang</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>C / C++</li>
+                  <li>C#</li>
+                  <li>Haskell</li>
+                  <li>MatLab</li>
+                  <li>R</li>
+                </ul>
               </Typography>
               <Typography
                 variant='h6'
