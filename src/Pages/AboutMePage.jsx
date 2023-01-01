@@ -59,14 +59,12 @@ const AboutMePage = () => {
                 <Hlspan>HealthTech</Hlspan>, <Hlspan>EduTech</Hlspan> and{" "}
                 <Hlspan>FinTech</Hlspan>. I am currently working in{" "}
                 <Hlspan>Open Banking and Payments </Hlspan> at{" "}
-                <span
-                  style={{
-                    fontFamily: "RobotoCondensedBold",
-                    color: pageColor,
-                  }}
+                <a
+                  href='https://www.finverse.com/'
+                  style={{ textDecoration: `underline ${pageColorSecondary}` }}
                 >
-                  Finverse Technologies
-                </span>
+                  <Hlspan>Finverse Technologies</Hlspan>
+                </a>
               </Typography>
               <Typography
                 variant='h6'
