@@ -104,6 +104,7 @@ function TopBarMobile({ backgroundColor }) {
             backgroundColor: "#fff",
             "&:hover": { backgroundColor: "#FFF" },
           }}
+          to={routes.Home}
         >
           <Typography
             color={backgroundColor}
