@@ -6,6 +6,7 @@ import {
   ContactMePage,
   LandingPage,
   NotFoundPage,
+  WorkExpPage,
 } from "./Pages/";
 
 const router = createHashRouter([
@@ -20,6 +21,10 @@ const router = createHashRouter([
   {
     path: routes.About,
     element: <AboutMePage />,
+  },
+  {
+    path: routes.Experience,
+    element: <WorkExpPage />,
   },
   {
     path: "*",

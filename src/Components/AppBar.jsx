@@ -54,7 +54,7 @@ function TopBarDesktop({ backgroundColor }) {
         </Box>
         {navBarComponents.map((i) => {
           return (
-            <Link to={i.href} style={{ textDecoration: "none" }}>
+            <Link to={i.href} style={{ textDecoration: "none" }} key={i.name}>
               <Button
                 key={i.name}
                 color='inherit'
