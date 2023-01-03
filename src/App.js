@@ -1,5 +1,4 @@
-// import logo from "./logo.svg";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import "./App.css";
 import routes from "./routes";
 import {
@@ -9,7 +8,7 @@ import {
   NotFoundPage,
 } from "./Pages/";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: routes.Home,
     element: <LandingPage />,
